@@ -2,6 +2,9 @@
 
 Type-ahead taxon name
 
+## Demo
+https://xwatkins.github.io/uniprot-taxonomy-navigator/
+
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
