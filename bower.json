@@ -2,6 +2,7 @@
   "name": "uniprot-taxonomy-autocomplete",
   "description": "Type-ahead taxon name",
   "main": "uniprot-taxonomy-autocomplete.html",
+  "keywords": ["web-components","uniprot","life sciences","taxonomy"],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
     "paper-input": "^1.1.22",
