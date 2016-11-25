@@ -1,0 +1,27 @@
+{
+  "name": "uniprot-taxonomy-autocomplete",
+  "description": "Type-ahead taxon name",
+  "main": "uniprot-taxonomy-autocomplete.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "paper-input": "^1.1.22",
+    "iron-ajax": "^1.4.3"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/xwatkins/uniprot-taxonomy-autocomplete",
+  "_release": "34ab08c0ae",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "34ab08c0aede4c3b62f3594079a30d0453e7a0f6"
+  },
+  "_source": "https://github.com/xwatkins/uniprot-taxonomy-autocomplete.git",
+  "_target": "master",
+  "_originalSource": "xwatkins/uniprot-taxonomy-autocomplete",
+  "_direct": true
+}

@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+
+<dom-module id="uniprot-taxonomy-autocomplete">
+  <template>
+    <style>
+      :host {}
+    </style>
+    <paper-input
+      label="Search"
+      value="{{input}}"></paper-input>
+    <div>
+      <ul>
+        <template is="dom-repeat" items="{{matches}}">
+          <li>
+            <a href="#" on-click="setSelected">{{item.scientificName}}</a>
+          </li>
+        </template>
+      </ul>
+    </div>
+    <iron-ajax id="requestTaxon" handle-as="json" on-response="handleResponse" debounce-duration="300"></iron-ajax>
+  </template>
+  <script>
+    Polymer({
+
+      is: 'uniprot-taxonomy-autocomplete',
+
+      properties: {
+        input: {
+          type: String,
+          observer: '_getTaxons'
+        },
+        matches: {
+          type: String
+        },
+        selected: {
+          type: String,
+          notify: true
+        }
+      },
+
+      _getTaxons: function() {
+        if(this.input && this.input.length > 3) {
+          this.$.requestTaxon.url = "http://www.ebi.ac.uk/proteins/api/taxonomy/name/" + input.value;
+          this.$.requestTaxon.params = {
+              'searchType':'STARTSWITH',
+              'fieldName':'SCIENTIFICNAME',
+              'pageNumber':1,
+              'pageSize':10
+          };
+          this.$.requestTaxon.generateRequest();
+        }
+      },
+
+      setSelected: function(e) {
+        this.input = e.model.item.scientificName;
+        this.selected = e.model.item.taxonomyId;
+      },
+
+      handleResponse: function(data) {
+        this.matches = data.detail.response.taxonomies;
+      }
+
+    });
+  </script>
+</dom-module>
