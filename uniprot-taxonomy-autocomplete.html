@@ -46,7 +46,7 @@
 
       _getTaxons: function() {
         if(this.input && this.input.length > 3) {
-          this.$.requestTaxon.url = "http://www.ebi.ac.uk/proteins/api/taxonomy/name/" + this.input.value;
+          this.$.requestTaxon.url = "http://www.ebi.ac.uk/proteins/api/taxonomy/name/" + this.input;
           this.$.requestTaxon.params = {
               'searchType':'STARTSWITH',
               'fieldName':'SCIENTIFICNAME',
